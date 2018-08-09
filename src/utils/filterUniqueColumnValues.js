@@ -7,8 +7,14 @@ const filterBasedKey = (arr, columnkey)=>{
     for (let item of columnSet){
         const enumKey = item.toUpperCase();
         columnEnum[enumKey]=item;
-      };
-    return columnEnum;
+    };
+    const stateobj = {}
+    for(let key in columnEnum){
+        stateobj[columnEnum[key]] = {
+            check: false
+        };
+    }; 
+    return stateobj;
 }; 
 
 export default filterBasedKey;
